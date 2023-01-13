@@ -19,8 +19,11 @@
                     Text="Guardar"
                     Clicked="OnSaveClickedAL" />
             <Button BackgroundColor="LightSeaGreen" 
-                    Text="Cancelar"
+                    Text="Borrar"
                     Clicked="OnCancelClickedAL" />
+            <Button BackgroundColor="LightSeaGreen" 
+                    Text="Cancelar"
+                    Clicked="DeleteButton_ClickedAL" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
