@@ -30,4 +30,16 @@ public partial class BurgerItemPageAL : ContentPage
         {
             _flag = e.Value;
         }
+
+    private async void DeleteButton_ClickedAL(object sender, EventArgs e)
+    {
+        if (BindingContext is Models.BurgerAL hambLA)
+        {
+            // Delete the file.
+            if (File.Exists(hambLA.Name))
+                File.Delete(hambLA.Name);
+        }
+
+        await Shell.Current.GoToAsync("..");
+    }
 }
