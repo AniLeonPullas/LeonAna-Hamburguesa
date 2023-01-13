@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:LeonAna_Hamburguesa.Models"
+             x:Class="LeonAna_Hamburguesa.Views.BurgerItemPageAL"
+             Title="Detalle del pedido AL">
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+                             Spacing="10"
+                             VerticalOptions="StartAndExpand">
+            <Label Text="Ingrese el nombre de la hamburguesa" />
+            <Entry x:Name="nameAL" Text="{Binding Name}" />
+            <Label Text="Descripción de la hamburguesa" />
+            <Entry x:Name="descAL" Text="{Binding Description}" />
+            <Label Text="¿Desea que su hamburguesa tenga queso extra?" />
+            <CheckBox x:Name="check"
+                      CheckedChanged="OnCheckBoxCheckedChangedAL" />
+            <Button BackgroundColor="LightSeaGreen"
+                    Text="Guardar"
+                    Clicked="OnSaveClickedAL" />
+            <Button BackgroundColor="LightSeaGreen" 
+                    Text="Cancelar"
+                    Clicked="OnCancelClickedAL" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
+
+
