@@ -9,11 +9,15 @@ public partial class BurgerListPageAL : ContentPage
 	{
         InitializeComponent();
         cargarDatosAL();
+        BindingContext = this;
 
     }
-    async void OnItemAddedAL(object sender, EventArgs e)
+    public void OnItemAddedAL(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync(nameof(BurgerItemPageAL));
+       Shell.Current.GoToAsync(nameof(BurgerItemPageAL),true, new Dictionary<string,object>
+       {
+           ["Item"]=new BurgerAL()
+       });
     }
     private void cargarDatosAL()
     {
@@ -23,6 +27,14 @@ public partial class BurgerListPageAL : ContentPage
     protected override void OnAppearing()
     {
         cargarDatosAL();
+    }
+
+    private void SelectedItem(object sender, SelectionChangedEventArgs e)
+    {
+        if (e.CurrentSelection.FirstOrDefault() is not BurgerAL Item)
+            return;
+
+        Shell.Current.GoToAsync(nameof(BurgerItemPageAL), true, new Dictionary<string, object> { ["Item"] = Item });
     }
 }
 
