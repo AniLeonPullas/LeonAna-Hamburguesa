@@ -8,7 +8,7 @@ public partial class BurgerListPageAL : ContentPage
     public BurgerListPageAL()
 	{
         InitializeComponent();
-        cargarDatosAL();
+       // cargarDatosAL();
         BindingContext = this;
 
     }
@@ -19,14 +19,19 @@ public partial class BurgerListPageAL : ContentPage
            ["Item"]=new BurgerAL()
        });
     }
-    private void cargarDatosAL()
+    //private void cargarDatosAL()
+   // {
+     //   burger = App.BurgerRepoAL.GetAllBurgers();
+       // burgerListAL.ItemsSource = burger;
+    //}
+    //protected override void OnAppearing()
+    //{
+      //  cargarDatosAL();
+    //}
+    protected override void OnNavigatedTo(NavigatedToEventArgs args)
     {
-        burger = App.BurgerRepoAL.GetAllBurgers();
+        List<BurgerAL> burger = App.BurgerRepoAL.GetAllBurgers();
         burgerListAL.ItemsSource = burger;
-    }
-    protected override void OnAppearing()
-    {
-        cargarDatosAL();
     }
 
     private void SelectedItem(object sender, SelectionChangedEventArgs e)
