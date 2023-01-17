@@ -41,13 +41,11 @@ public partial class BurgerItemPageAL : ContentPage
 
     private async void DeleteButton_ClickedAL(object sender, EventArgs e)
     {
-        if (BindingContext is Models.BurgerAL hambLA)
+        if (Item.Id == 0)
         {
-            // Delete the file.
-            if (File.Exists(hambLA.Name))
-                File.Delete(hambLA.Name);
+            return;
         }
-
+        App.BurgerRepoAL.DeleteItem(Item);
         await Shell.Current.GoToAsync("..");
     }
 }
