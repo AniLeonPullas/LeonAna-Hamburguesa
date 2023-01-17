@@ -6,7 +6,10 @@
              Title="Listas de pedidos AL">
 
         <Grid RowDefinitions="*,Auto">
-        <CollectionView x:Name="burgerListAL">
+        <CollectionView x:Name="burgerListAL"
+                       Margin="10" 
+                        SelectionMode="Single"
+                        SelectionChanged="SelectedItem">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:BurgerAL">
                     <Grid>
@@ -14,6 +17,7 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="2*" />
                         </Grid.ColumnDefinitions>
+                        
                         <Label Text="{Binding Id}" />
                         <Label Grid.Column="1" Text="{Binding Name}" />
                     </Grid>
