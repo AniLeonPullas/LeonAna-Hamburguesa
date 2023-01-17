@@ -44,5 +44,10 @@ namespace LeonAna_Hamburguesa.Data
             List<BurgerAL> burgers = conn.Table<BurgerAL>().ToList();
             return burgers;
         }
-    }
+        public int DeleteItem(BurgerAL item)
+        {
+            Init();
+            return conn.Delete(item);
+        }
+    }   
 }
