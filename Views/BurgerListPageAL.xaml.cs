@@ -12,6 +12,7 @@ public partial class BurgerListPageAL : ContentPage
         BindingContext = this;
 
     }
+
     public void OnItemAddedAL(object sender, EventArgs e)
     {
        Shell.Current.GoToAsync(nameof(BurgerItemPageAL),true, new Dictionary<string,object>
@@ -20,14 +21,15 @@ public partial class BurgerListPageAL : ContentPage
        });
     }
     //private void cargarDatosAL()
-   // {
-     //   burger = App.BurgerRepoAL.GetAllBurgers();
-       // burgerListAL.ItemsSource = burger;
+    // {
+    //   burger = App.BurgerRepoAL.GetAllBurgers();
+    // burgerListAL.ItemsSource = burger;
     //}
     //protected override void OnAppearing()
     //{
-      //  cargarDatosAL();
+    //  cargarDatosAL();
     //}
+
     protected override void OnNavigatedTo(NavigatedToEventArgs args)
     {
         List<BurgerAL> burger = App.BurgerRepoAL.GetAllBurgersAL();
@@ -41,5 +43,6 @@ public partial class BurgerListPageAL : ContentPage
 
         Shell.Current.GoToAsync(nameof(BurgerItemPageAL), true, new Dictionary<string, object> { ["Item"] = Item });
     }
+
 }
 

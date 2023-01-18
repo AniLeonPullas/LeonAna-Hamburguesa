@@ -8,6 +8,7 @@
     BackgroundColor="DarkMagenta">
     
     <ShellContent
+        
         Title="Home"
         ContentTemplate="{DataTemplate local:BurgerListPageAL}"
         Route="BurgerList" />
