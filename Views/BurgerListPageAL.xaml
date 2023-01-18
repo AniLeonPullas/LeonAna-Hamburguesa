@@ -24,7 +24,7 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <Button BackgroundColor="LightSalmon"
+        <Button BackgroundColor="NavajoWhite"
                 Grid.Row="1" Text="Añadir nuevo registro"
                 TextColor="Black"
                 Clicked="OnItemAddedAL"
