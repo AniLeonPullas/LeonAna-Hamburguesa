@@ -24,7 +24,7 @@ namespace LeonAna_Hamburguesa.Data
             conn = new SQLiteConnection(_dbPath);
             conn.CreateTable<BurgerAL>();
         }
-        public int AddNewBurger(BurgerAL burger)
+        public int AddNewBurgerAL(BurgerAL burger)
         {
             Init();
           //  int result = conn.Insert(burger);
@@ -38,13 +38,13 @@ namespace LeonAna_Hamburguesa.Data
                 return conn.Insert(burger);
             }
         }
-        public List<BurgerAL> GetAllBurgers()
+        public List<BurgerAL> GetAllBurgersAL()
         {
             Init();
             List<BurgerAL> burgers = conn.Table<BurgerAL>().ToList();
             return burgers;
         }
-        public int DeleteItem(BurgerAL item)
+        public int DeleteItemAL(BurgerAL item)
         {
             Init();
             return conn.Delete(item);

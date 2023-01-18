@@ -6,9 +6,6 @@ namespace LeonAna_Hamburguesa.Views;
 [QueryProperty ("Item","Item")]
 public partial class BurgerItemPageAL : ContentPage
 {
-    // BurgerAL Item = new BurgerAL();
-    bool _flag;
-
     public BurgerAL Item
     {
         get => BindingContext as BurgerAL;
@@ -26,18 +23,14 @@ public partial class BurgerItemPageAL : ContentPage
         //Item.Description = descAL.Text;
         // Item.WithExtraCheese = _flag;
 
-        App.BurgerRepoAL.AddNewBurger(Item);
+        App.BurgerRepoAL.AddNewBurgerAL(Item);
         Shell.Current.GoToAsync("..");
     }
     private void OnCancelClickedAL(object sender, EventArgs e)
     {
         Shell.Current.GoToAsync("..");
     }
-   private void OnCheckBoxCheckedChangedAL(object sender,
-     CheckedChangedEventArgs e)
-        {
-            _flag = e.Value;
-        }
+
 
     private async void DeleteButton_ClickedAL(object sender, EventArgs e)
     {
@@ -45,7 +38,7 @@ public partial class BurgerItemPageAL : ContentPage
         {
             return;
         }
-        App.BurgerRepoAL.DeleteItem(Item);
+        App.BurgerRepoAL.DeleteItemAL(Item);
         await Shell.Current.GoToAsync("..");
     }
 }

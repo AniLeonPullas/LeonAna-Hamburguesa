@@ -30,11 +30,11 @@ public partial class BurgerListPageAL : ContentPage
     //}
     protected override void OnNavigatedTo(NavigatedToEventArgs args)
     {
-        List<BurgerAL> burger = App.BurgerRepoAL.GetAllBurgers();
+        List<BurgerAL> burger = App.BurgerRepoAL.GetAllBurgersAL();
         burgerListAL.ItemsSource = burger;
     }
 
-    private void SelectedItem(object sender, SelectionChangedEventArgs e)
+    private void SelectedItemAL(object sender, SelectionChangedEventArgs e)
     {
         if (e.CurrentSelection.FirstOrDefault() is not BurgerAL Item)
             return;
