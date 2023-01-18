@@ -10,10 +10,10 @@
                              VerticalOptions="StartAndExpand">
             <Label Text="Ingrese el nombre de la hamburguesa" />
             <Entry x:Name="nameAL" Text="{Binding Name}" />
-            <Label Text="Descripción de la hamburguesa" />
+            <Label Text="Ingrese la Descripción de la hamburguesa" />
             <Entry x:Name="descAL" Text="{Binding Description}" />
             <Label Text="¿Desea que su hamburguesa tenga queso extra?" />
-            <CheckBox x:Name="check" 
+            <CheckBox x:Name="checkAL" 
                       Color="Red"
                       IsChecked="{Binding WithExtraCheese}"
                       />
@@ -26,7 +26,7 @@
                     TextColor="Black"
                     Clicked="OnCancelClickedAL" />
             <Button BackgroundColor="NavajoWhite" 
-                    Text="Borrar"
+                    Text="Borrar o Eliminar"
                     TextColor="Black"
                     Clicked="DeleteButton_ClickedAL" />
         </VerticalStackLayout>

@@ -3,13 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LeonAna_Hamburguesa.Views.BurgerListPageAL"
              xmlns:models="clr-namespace:LeonAna_Hamburguesa.Models"
-             Title="Listas de pedidos AL">
+             Title="Listas de pedidos de hamburguesas AL">
 
         <Grid RowDefinitions="*,Auto">
         <CollectionView x:Name="burgerListAL"
                        Margin="10" 
                         SelectionMode="Single"
-                        SelectionChanged="SelectedItem">
+                        SelectionChanged="SelectedItemAL">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:BurgerAL">
                     <Grid>
@@ -25,7 +25,7 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
         <Button BackgroundColor="NavajoWhite"
-                Grid.Row="1" Text="Añadir nuevo registro"
+                Grid.Row="1" Text="Añadir un nuevo registro de hamburguesas"
                 TextColor="Black"
                 Clicked="OnItemAddedAL"
                 Margin="20"/>
